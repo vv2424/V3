@@ -23,7 +23,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">GAN-WN</h1>
+      <h1 class="project-name">V3-INPAINTING</h1>
       <h2 class="project-tagline">FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS</h2>
       
         <a href="https://github.com/vv2424/V3/" class="btn">View on GitHub</a>
@@ -33,7 +33,9 @@
 
     <section class="main-content">
       <h2 id="here-you-will-find-demos-of-our-paper">Here, you will find demos of our paper.</h2>
-
+      
+<p>Our model consists of two components: 1) a mixed-level encoder-decoder module to learn mixed-level represenation and 2) an auto-regressive decoder to inpaint missing notes using mixed-level representations.
+<img src="modeljie.png" alt="Pipelines" /></p>
 
 <p>In our paper,we elaborate on how the proposed model inpaints:</p>
 
@@ -55,8 +57,7 @@
   </li>
 </ol>
 
-<p>Our model consists of two components: 1) a mixed-level encoder-decoder module to learn mixed-level represenation and 2) an auto-regressive decoder to inpaint missing notes using mixed-level representations.
-<img src="modeljie.png" alt="Pipelines" /></p>
+
 
 
 <p>We show some demos in the inference section.</p>
@@ -64,13 +65,13 @@
 <h3 id="1-Variable-position inpainting">1. Variable-position inpainting</h3>
 <p>An example of a 16-bar melody missing 1-4th, 5-8th, 9-12th or 13-16th bars.</p>
 <p>Missing 1-4th bars.</p>
-<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<audio controls=""> <source src="./songs/inpaint-variable-position/19_34gphrase1_bip.wav" type="audio/wav" /></audio>
 <p>Missing 5-8thth bars.</p>
-<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase2_bip.wav" type="audio/wav" /></audio>
 <p>Missing 9-12th bars.</p>
-<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase3_bip.wav" type="audio/wav" /></audio>
 <p>Missing 12-16th bars.</p>
-<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase4_bip.wav" type="audio/wav" /></audio>
       
       
       
