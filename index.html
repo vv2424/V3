@@ -26,30 +26,32 @@
       <h1 class="project-name">GAN-WN</h1>
       <h2 class="project-tagline">FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS</h2>
       
-        <a href="https://github.com/SvenShade/GAN-WN" class="btn">View on GitHub</a>
+        <a href="https://github.com/vv2424/V3/" class="btn">View on GitHub</a>
       
       
     </section>
 
     <section class="main-content">
-      <h2 id="here-you-will-find-spectrograms-and-audio-clips-to-augment-our-paper">Here, you will find spectrograms and audio clips to augment our paper.</h2>
+      <h2 id="here-you-will-find-demos-of-our-paper">Here, you will find demos of our paper.</h2>
 
-<p>Quantitative metrics can be helpful in generally assessing the capabilities of an audio processing technique, when the ground truth is known. However, given the subjective nature of instrumental audio, being able to audition the results is often more useful.</p>
 
-<p>In our paper, we highlight analogous image tasks to each MIR task. To recap:</p>
+<p>In our paper,we elaborate on how the proposed model inpaints:</p>
 
 <ol>
   <li>
-    <p>Source-separation becomes a denoising problem, reconstructing frequencies related to the signal and ignoring others.</p>
+    <p> Variable-position inpainting.</p>
   </li>
   <li>
-    <p>Super-resolution is analogous to inpainting, where the blank half of a spectrogram is filled by considering the first half (the low frequencies) and prior knowledge.</p>
+    <p>Variable-length inpainting.</p>
   </li>
   <li>
-    <p>Synthesis becomes a style transfer problem, where the model has extracted the overall harmonic ‘style’ of an instrument, and seeks to apply this to sine-waves serving as a harmonic blueprint</p>
+    <p>Irregularly-corrupted context attending.</p>
   </li>
   <li>
-    <p>Pitchtracking can be thought of as semantic segmentation in the same way that a satellite image might be translated into a road map.</p>
+    <p>Mixed-level representation sampling.</p>
+  </li>
+  <li>
+    <p>Controllable generation in number of notes in one measure.</p>
   </li>
 </ol>
 
