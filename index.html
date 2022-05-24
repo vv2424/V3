@@ -1,1 +1,124 @@
-test
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Here is the demo page. | GAN-WN</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Here, you will find demos of our paper." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS" />
+<meta property="og:description" content="FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS" />
+<link rel="canonical" href="https://github.com/vv2424/V3/" />
+<meta property="og:url" content="https://vv2424.github.io/V3/" />
+<meta property="og:site_name" content="Inpainting model" />
+<script type="application/ld+json">
+{"headline":"Here, you will find demos of our paper.","@type":"WebSite","url":"https://vv2424.github.io/V3/","name":"V3","description":"FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/GAN-WN/assets/css/style.css?v=a4406d7743520b1da760cd557398952e97f3d1e3">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">GAN-WN</h1>
+      <h2 class="project-tagline">FLEXIBLE MUSIC INPAINTING VIA MASKING MIXED-LEVEL REPRESENTATIONS</h2>
+      
+        <a href="https://github.com/SvenShade/GAN-WN" class="btn">View on GitHub</a>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <h2 id="here-you-will-find-spectrograms-and-audio-clips-to-augment-our-paper">Here, you will find spectrograms and audio clips to augment our paper.</h2>
+
+<p>Quantitative metrics can be helpful in generally assessing the capabilities of an audio processing technique, when the ground truth is known. However, given the subjective nature of instrumental audio, being able to audition the results is often more useful.</p>
+
+<p>In our paper, we highlight analogous image tasks to each MIR task. To recap:</p>
+
+<ol>
+  <li>
+    <p>Source-separation becomes a denoising problem, reconstructing frequencies related to the signal and ignoring others.</p>
+  </li>
+  <li>
+    <p>Super-resolution is analogous to inpainting, where the blank half of a spectrogram is filled by considering the first half (the low frequencies) and prior knowledge.</p>
+  </li>
+  <li>
+    <p>Synthesis becomes a style transfer problem, where the model has extracted the overall harmonic ‘style’ of an instrument, and seeks to apply this to sine-waves serving as a harmonic blueprint</p>
+  </li>
+  <li>
+    <p>Pitchtracking can be thought of as semantic segmentation in the same way that a satellite image might be translated into a road map.</p>
+  </li>
+</ol>
+
+<p>We introduce two pipelines to achieve this, shown below. The top details GAN-S, which uses a secondary cGAN stage to aid reconstruction, while the bottom details GAN-WN.
+<img src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/pipeline.png" alt="Pipelines" /></p>
+
+<p>Below is an example linear spectrogram, restored using the secondary cGAN. From left to right: descaled spectrogram, restoration, ground truth.
+<img src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/GAN-S_reconst.jpg" alt="Reconst" /></p>
+
+<p>Given the subjective nature of the first three tasks, we provide an audio demonstration of each below.</p>
+
+<h3 id="1-source-separation-as-denoising">1. Source-separation as Denoising</h3>
+<p>We start with a recording of a piano and violin duet, playing a phrase from Bach.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<p>Following the top pipeline from the above figure, our process looks for frequencies specific to the violin, and attempts to silence the piano.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_violin.wav" type="audio/wav" /></audio>
+<p>Another example from the same piece.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/SS-ref.wav" type="audio/wav" /></audio>
+<p>Now, our CNN baseline has a go at isolating the violin.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/SS-CNN.wav" type="audio/wav" /></audio>
+<p>The result from our method. It introduces a different sort of artefact, losing high-frequency fidelity primarily due to the lossy spectrogram reconstruction process. Yet, notice the piano source is much better attenuated.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/SS-cGAN-Secx2.wav" type="audio/wav" /></audio>
+
+<p>Below, we give a closer look at source-separation, with a ground-truth difference overlay. Alignments with ground truth are cyan. Areas where ground truth is missed are red. Interference (piano) is white. Observe cGAN’s precision in removing interference, sometimes at the cost of detail.
+<img src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/overlay.jpg" alt="Pipelines" /></p>
+
+<h3 id="2-super-resolution-as-spectral-inpainting">2. Super-resolution as Spectral Inpainting</h3>
+<p>We start with a violin phrase by Paganini, at a sample rate of 4kHz (ultra low-fidelity).</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/paganini_lofi.wav" type="audio/wav" /></audio>
+<p>Here’s the result of our method.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/paganini_bandavg-plus-logcont.wav" type="audio/wav" /></audio>
+<p>This is the ground truth.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/paganini_truth.wav" type="audio/wav" /></audio>
+<p>Another example. This time, from Chopin. Here is the lofi clip:</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/chopin-lofi-clip.mp3" type="audio/mp3" /></audio>
+<p>Here is the baseline performance (linear interpolation):</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/chopin-lin-clip.mp3" type="audio/mp3" /></audio>
+<p>Here is the result of our cGAN process.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/chopin-LC-clip.mp3" type="audio/mp3" /></audio>
+<p>Ground truth.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/chopin-gt-clip.mp3" type="audio/mp3" /></audio>
+
+<p>Alternatively, we can use a Wavenet to reconstruct the raw audio directly from the Mel-spectrogram (see the lower pipeline in the figure from before). This kind of modelling proved to be highly resource intensive, with training taking over a fortnight to see convergence on our NVIDIA GTX1080ti. Despite lacking the memory necessary to train a sufficiently complex model, the concept is there.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/paganini_WN_guidefactor30.wav" type="audio/wav" /></audio>
+<p>We can further improve the output of our unstable Wavenet. Instead of conditioning Wavenet on the spectrogram alone, we also feed in the timesteps of the original, lofi audio. At every step, we now take the average of both original audio and Wavenet’s prediction (weighted towards the former). This can be thought of as a sort of teacher-forcing generation. As usual, that timestep becomes part of the series, and in turn influences future predictions. Here, we apply this to our Chopin clip.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/lofi-WN-20-iter1.wav" type="audio/wav" /></audio>
+
+<h3 id="3-synthesis-as-style-transfer-onto-harmonics">3. Synthesis as Style Transfer Onto Harmonics</h3>
+
+<p>Here is the melody from the folk song, ‘Scarborough Fair’, as played by a sinewave generator.
+These sinewaves include the fundamental as well as the first few harmonics, in order to provide structure for cGAN to translate.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/scarborough_H2R_harmonics.wav" type="audio/wav" /></audio>
+<p>Here is the same harmonic track, with the violin ‘style’ applied:</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/scarborough_H2R_enhance_linreconst_logcontr.wav" type="audio/wav" /></audio>
+
+<p>Finally, we leave the reader with the first 7 notes of the chorus of Rick Astley’s “Never Gonna Give You Up”, as played by a sinewave generator.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/rick_harmonics.wav" type="audio/wav" /></audio>
+<p>Here is the result of our method, applying violin stylisation :)</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/rick_synth.wav" type="audio/wav" /></audio>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/SvenShade/GAN-WN">GAN-WN</a> is maintained by <a href="https://github.com/SvenShade">SvenShade</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
+</html>
