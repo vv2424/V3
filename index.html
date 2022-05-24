@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Here is the demo page. | GAN-WN</title>
+<title>Here is the demo page. | V3 INPAINTING</title>
 <meta name="generator" content="Jekyll v3.7.4" />
 <meta property="og:title" content="Here, you will find demos of our paper." />
 <meta property="og:locale" content="en_US" />
@@ -39,7 +39,7 @@
 
 <ol>
   <li>
-    <p> Variable-position inpainting.</p>
+    <p>Variable-position inpainting.</p>
   </li>
   <li>
     <p>Variable-length inpainting.</p>
@@ -55,17 +55,25 @@
   </li>
 </ol>
 
-<p>We introduce two pipelines to achieve this, shown below. The top details GAN-S, which uses a secondary cGAN stage to aid reconstruction, while the bottom details GAN-WN.
+<p>Our model consists of two components: 1) a mixed-level encoder-decoder module to learn mixed-level represenation and 2) an auto-regressive decoder to inpaint missing notes using mixed-level representations.
 <img src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/pipeline.png" alt="Pipelines" /></p>
 
-<p>Below is an example linear spectrogram, restored using the secondary cGAN. From left to right: descaled spectrogram, restoration, ground truth.
-<img src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/GAN-S_reconst.jpg" alt="Reconst" /></p>
 
-<p>Given the subjective nature of the first three tasks, we provide an audio demonstration of each below.</p>
+<p>We show some demos in the inference section.</p>
 
-<h3 id="1-source-separation-as-denoising">1. Source-separation as Denoising</h3>
-<p>We start with a recording of a piano and violin duet, playing a phrase from Bach.</p>
+<h3 id="1-Variable-position inpainting">1. Variable-position inpainting</h3>
+<p>An example of a 16-bar melody missing 1-4th, 5-8th, 9-12th or 13-16th bars.</p>
+<p>Missing 1-4th bars.</p>
 <audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<p>Missing 5-8thth bars.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<p>Missing 9-12th bars.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+<p>Missing 12-16th bars.</p>
+<audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_full.wav" type="audio/wav" /></audio>
+      
+      
+      
 <p>Following the top pipeline from the above figure, our process looks for frequencies specific to the violin, and attempts to silence the piano.</p>
 <audio controls=""> <source src="https://raw.githubusercontent.com/SvenShade/Thesis_Demo/master/source_sep_violin.wav" type="audio/wav" /></audio>
 <p>Another example from the same piece.</p>
