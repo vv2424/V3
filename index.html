@@ -37,7 +37,7 @@
 <p>Our model consists of two components: 1) a mixed-level encoder-decoder module to learn mixed-level represenation and 2) an auto-regressive decoder to inpaint missing notes using mixed-level representations.
 <img src="modeljie.png" alt="Pipelines" /></p>
 
-<p>In our paper,we elaborate on how the proposed model inpaints:</p>
+<p>In our paper, we elaborate on how the proposed model inpaints by several inference experiments as follows:</p>
 
 <ol>
   <li>
@@ -64,20 +64,20 @@
 
 <h3 id="1-Variable-position inpainting">1. Variable-position inpainting</h3>
 <p>An example of a 16-bar melody missing 1-4th, 5-8th, 9-12th or 13-16th bars.</p>
-<p>Missing 1-4th bars.</p>
+<p>Inpainting 1-4th bars (from 0s to 8s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34gphrase1_bip.wav" type="audio/wav" /></audio>
-<p>Missing 5-8thth bars.</p>
+<p>Inpainting 5-8thth bars (from 8s to 16s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase2_bip.wav" type="audio/wav" /></audio>
-<p>Missing 9-12th bars.</p>
+<p>Inpainting 9-12th bars (from 16s to 24s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase3_bip.wav" type="audio/wav" /></audio>
-<p>Missing 12-16th bars.</p>
+<p>Inpainting 12-16th bars (from 24s to 32s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase4_bip.wav" type="audio/wav" /></audio>
       
       
 <h3 id="2-Variable-length inpainting">2. Variable-length inpainting</h3>
 <p>Examples show that the proposed model infills missing spans with different numbers of bars.</p>
 <p>Case 1</p>
-<p>Inpaint 2 bars.</p>
+<p>Inpainting 2 bars (from 12s to 16s).</p>
 <p>Our proposed model.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case1/2bar/ours.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -88,7 +88,7 @@
 <audio controls=""> <source src="./songs/inpaint-variable-length/case1/2bar/ours_without_cl.mp3" type="audio/mp3" /></audio>
 
       
-<p>Inpaint 4 bars.</p>
+<p>Inpaint 4 bars (from 12s to 20s).</p>
 <p>Our proposed model.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case1/4bar/our%20model.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -100,7 +100,7 @@
       
 
 <p>Case 2</p>
-<p>Inpaint 2 bars.</p>
+<p>Inpaint 2 bars (from 12s to 16s).</p>
 <p>Our proposed model.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/2bar/ours.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -112,7 +112,7 @@
 
       
 <p>Inpaint 4 bars.</p>
-<p>Our proposed model.</p>
+<p>Our proposed model (from 12s to 20s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/4bar/our%20model.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/4bar/baseline1.mp3" type="audio/mp3" /></audio>
@@ -125,7 +125,7 @@
       
       
 <h3 id="3-Irregularly-corrupted context attending">3.Irregularly-corrupted context attending</h3>      
-<p>The model attends tomasked contexts and infills missing segments.</p>
+<p>The model attends tomasked contexts and infills missing segments. The generated parts are sampled.</p>
 <p>Total 10 bars.</p>
 <audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/10sample1.mp3" type="audio/mp3" /></audio>
 <p>Total 12 bars.</p>
@@ -137,7 +137,7 @@
       
 <p> Diversified generation</p>
 <h3 id="4-Mixed-level representation sampling">4. Mixed-level representation sampling</h3>
-<p>Our model generate diversified versions of 'Danny Boy' under mixed-level sampling.</p>
+<p>Our model generate diversified versions of 'Danny Boy' under mixed-level sampling. The inpanted part is from 16s to 24s.</p>
 <p>Version 1.</p>
 <audio controls=""> <source src="./songs/mixed-level_representation_ordering/version1.mp3" type="audio/mp3" /></audio>
 <p>Version 2.</p>
