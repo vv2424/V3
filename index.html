@@ -66,7 +66,7 @@
 <p>An example of a 16-bar melody. Our model inpaints  1-4th, 5-8th, 9-12th or 13-16th bars seperately.</p>
 <p>Inpainting 1-4th bars (from 0s to 8s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34gphrase1_bip.wav" type="audio/wav" /></audio>
-<p>Inpainting 5-8thth bars (from 8s to 16s).</p>
+<p>Inpainting 5-8th bars (from 8s to 16s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase2_bip.wav" type="audio/wav" /></audio>
 <p>Inpainting 9-12th bars (from 16s to 24s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-position/19_34phrase3_bip.wav" type="audio/wav" /></audio>
@@ -75,7 +75,7 @@
       
       
 <h3 id="2-Variable-length inpainting">2. Variable-length inpainting</h3>
-<p>Examples show that the proposed model infills missing spans with different numbers of bars.</p>
+<p>Examples show that the comparison between our model and the baselines  in terms of infilling missing spans with different numbers of bars. In the same case, the context in the first 6 bars and the last 6 bars is the same, the models inpaint the middle 2 bars (12-16s) or 4 bars (12s-20s).</p>
 <p>Case 1</p>
 <p>Inpainting 2 bars (from 12s to 16s).</p>
 <p>Our proposed model.</p>
@@ -88,7 +88,7 @@
 <audio controls=""> <source src="./songs/inpaint-variable-length/case1/2bar/ours_without_cl.mp3" type="audio/mp3" /></audio>
 
       
-<p>Inpaint 4 bars (from 12s to 20s).</p>
+<p>Inpainting 4 bars (from 12s to 20s).</p>
 <p>Our proposed model.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case1/4bar/our%20model.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -100,7 +100,7 @@
       
 
 <p>Case 2</p>
-<p>Inpaint 2 bars (from 12s to 16s).</p>
+<p>Inpainting 2 bars (from 12s to 16s).</p>
 <p>Our proposed model.</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/2bar/ours.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -111,7 +111,7 @@
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/2bar/ours_without_cl.mp3" type="audio/mp3" /></audio>
 
       
-<p>Inpaint 4 bars.</p>
+<p>Inpainting 4 bars.</p>
 <p>Our proposed model (from 12s to 20s).</p>
 <audio controls=""> <source src="./songs/inpaint-variable-length/case2/4bar/our%20model.mp3" type="audio/mp3" /></audio>
 <p>Baseline 1.</p>
@@ -125,7 +125,7 @@
       
       
 <h3 id="3-Irregularly-corrupted context attending">3.Irregularly-corrupted context attending</h3>      
-<p>The model attends tomasked contexts and infills missing segments. The generated parts are sampled.</p>
+<p>Our proposed model attends to masked contexts and infills missing segments with different total length. The positions of generated parts are sampled.</p>
 <p>Total 10 bars.</p>
 <audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/10sample1.mp3" type="audio/mp3" /></audio>
 <p>Total 12 bars.</p>
