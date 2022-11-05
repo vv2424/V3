@@ -35,7 +35,7 @@
     <section class="main-content">
       <h2 id="here-you-will-find-demos-of-our-paper">Here, you will find demos of our paper.</h2>
       
-<p>Our model consists of two components: 1) a mixed-level encoder-decoder module to learn mixed-level represenation and 2) an auto-regressive decoder to inpaint missing notes using mixed-level representations.
+<p>Our inpainting model is a BART-like language model which has a Transformer encoder connected to an autoregressive Transformer decoder. To effectively encode long music sequences, the language model regard the observational music data as a sequence of mixed high level representations. The encoder is first pre-trained and later jointly trained with the decoder.
 <img src="overmodel.png" alt="Pipelines" /></p>
 
 <p>In our paper, we elaborate on how the proposed model inpaints by several inference experiments as follows:</p>
