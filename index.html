@@ -127,33 +127,11 @@
       
       
       
-<h3 id="3-Irregularly-corrupted context attending">3.Irregularly-corrupted context attending</h3>      
-<p>Our proposed model attends to masked contexts and infills missing segments with different total length. The positions of generated parts are sampled.</p>
-<p>Total 10 bars.</p>
-<audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/10sample1.mp3" type="audio/mp3" /></audio>
-<p>Total 12 bars.</p>
-<audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/12sample1.mp3" type="audio/mp3" /></audio>
-
 
 
       
-<p> Diversified generation</p>
-<h3 id="4-Mixed-level representation sampling">4. Mixed-level representation sampling</h3>
-<p>Our model generate diversified versions of 'Danny Boy' under mixed-level sampling. The inpanted part is from 16s to 24s.</p>
-<p>Version 1.</p>
-<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version1.mp3" type="audio/mp3" /></audio>
-<p>Version 2.</p>
-<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version2.mp3" type="audio/mp3" /></audio>
-<p>Version 3.</p>
-<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version3.mp3" type="audio/mp3" /></audio>
-<p>Version 4</p>
-<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version4.mp3" type="audio/mp3" /></audio>
-<p>Version 5:</p>
-<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version5.mp3" type="audio/mp3" /></audio>
 
-      
-
-<h3 id="5-Controllable generation in number of notes in one measure.">5. Controllable generation in number of notes in one measure.</h3>
+<h3 id="Semantic features: Rhythm specification.">Semantic features: Rhythm specification.</h3>
 
 <p>Here, we change conditioned rhythm representation from the melody inpainted by our proposed model to the other one  by applying the EC2VAE model once again, the operation varies the number of inpainted
 notes within one bar.</p>
@@ -173,6 +151,30 @@ notes within one bar.</p>
 <audio controls=""> <source src="./songs/control_note_number/case2/rhythm_target2.mp3" type="audio/mp3" /></audio>
 </p> Target number of notes in the inpainted part.</p>
 <audio controls=""> <source src="./songs/control_note_number/case2/result.mp3" type="audio/mp3" /></audio>
+
+
+<h3 id="More experiment: Irregularly-corrupted context attending">More experiment: Irregularly-corrupted context attending</h3>      
+<p>Our proposed model attends to masked contexts and infills missing segments with different total length. The positions of generated parts are sampled.</p>
+<p>Total 10 bars.</p>
+<audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/10sample1.mp3" type="audio/mp3" /></audio>
+<p>Total 12 bars.</p>
+<audio controls=""> <source src="./songs/Irregularly-corrupted%20context%20attending/case1/12sample1.mp3" type="audio/mp3" /></audio>
+
+
+
+      
+<h3 id="More experiment: Mixed-level representation sampling">More experiment: Mixed-level representation sampling</h3>
+<p>Our model generate diversified versions of 'Danny Boy' under mixed-level sampling. The inpanted part is from 16s to 24s.</p>
+<p>Version 1.</p>
+<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version1.mp3" type="audio/mp3" /></audio>
+<p>Version 2.</p>
+<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version2.mp3" type="audio/mp3" /></audio>
+<p>Version 3.</p>
+<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version3.mp3" type="audio/mp3" /></audio>
+<p>Version 4</p>
+<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version4.mp3" type="audio/mp3" /></audio>
+<p>Version 5:</p>
+<audio controls=""> <source src="./songs/mixed-level_representation_ordering/version5.mp3" type="audio/mp3" /></audio>
 
       
 <p>Below, we show the music score of some cases:
